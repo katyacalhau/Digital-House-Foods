@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.digitalhousefoods.R
-import com.example.digitalhousefoods.model.Menu
+import com.example.digitalhousefoods.model.MenuRestaurante
 
 class MenuDetalhes : AppCompatActivity() {
 
@@ -23,7 +23,7 @@ class MenuDetalhes : AppCompatActivity() {
         val imagem = info?.getInt("IMAGEM")
 
         if (nome != null && descricao != null && imagem != null) {
-        val menu = Menu(nome, descricao, imagem)
+        val menu = MenuRestaurante(nome, descricao, imagem)
 
         nome_menu.text = menu.nome
         descricao_menu.text = menu.descricao

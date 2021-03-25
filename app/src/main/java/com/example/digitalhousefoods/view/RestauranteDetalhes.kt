@@ -2,19 +2,16 @@ package com.example.digitalhousefoods.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.widget.Button
-import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.view.menu.MenuAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.digitalhousefoods.R
+import com.example.digitalhousefoods.model.MenuRestaurante
 
 class RestauranteDetalhes : AppCompatActivity() {
 
-    val recycler by lazy { findViewById<RecyclerView>(R.id.rv_menu) }
+    val recycler by lazy { findViewById<RecyclerView>(R.id.rv_restaurantes) }
     val nome_restaurante by lazy { findViewById<TextView>(R.id.tv_restaurant) }
     val imagem_restaurante by lazy { findViewById<ImageView>(R.id.img_restaurant) }
 
@@ -23,7 +20,7 @@ class RestauranteDetalhes : AppCompatActivity() {
         setContentView(R.layout.activity_restaurante_detalhes)
 
         val info = intent.extras
-        val menu = info?.getSerializable("MENU") as MutableList<Menu>
+        val menu = info?.getSerializable("MENU") as MutableList<MenuRestaurante>
         val nome = info.getString("NOME")
         val imagem = info.getInt("IMAGEM")
 
@@ -34,7 +31,7 @@ class RestauranteDetalhes : AppCompatActivity() {
 
         recycler.layoutManager = GridLayoutManager(this,2)
 
-        val adapter = com.example.digitalhousefoods.adapter.MenuAdapter (menu)
+        val adapter = com.example.digitalhousefoods.adapter.MenuAdapter(menu)
         recycler.adapter = adapter
 
     }

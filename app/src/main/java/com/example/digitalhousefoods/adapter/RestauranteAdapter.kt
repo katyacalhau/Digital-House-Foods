@@ -42,7 +42,7 @@ class RestauranteAdapter (private val listaRestaurante: MutableList<Restaurante>
             val intent = Intent(it.context, RestauranteDetalhes::class.java)
             intent.putExtra("NOME", listaRestaurante[position].nome)
             intent.putExtra("IMAGEM", listaRestaurante [position].imagemRest)
-            intent.putExtra("MENU", listaRestaurante [position].menu as Serializable)
+            intent.putExtra("MENU", listaRestaurante [position].menuRestaurantes as Serializable)
             it.context.startActivity(intent)
         }
     }
