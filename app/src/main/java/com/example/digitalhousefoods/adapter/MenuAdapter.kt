@@ -26,6 +26,8 @@ class MenuAdapter (private val menuList: MutableList<Menu>):
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
 
+        val menu = menuList [position]
+
         val image = holder.imageView
         image.setImageResource(menuList[position].imgMenu)
 
